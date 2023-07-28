@@ -20,6 +20,7 @@ const Register = () => {
                 name: name,
                 email: user.email,
             });
+            user.setName = name;
             setName('');
             setEmail('');
             setPassword('');
