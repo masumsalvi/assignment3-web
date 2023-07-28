@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { auth } from './firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -9,9 +11,10 @@ const Login = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      await auth.signInWithEmailAndPassword(email, password);
+      await signInWithEmailAndPassword(auth, email, password);
       setEmail('');
       setPassword('');
+      setError(null);
     } catch (error) {
       setError('Error signing in with email and password');
     }
@@ -26,18 +29,21 @@ const Login = () => {
           type="email"
           placeholder="Email"
           value={email}
-          onChange={event => setEmail(event.target.value)}
+          onChange={(event) => setEmail(event.target.value)}
         />
         <input
           name="password"
-          type="password"
+          type="password" 
           placeholder="Password"
           value={password}
-          onChange={event => setPassword(event.target.value)}
+          onChange={(event) => setPassword(event.target.value)}
         />
         <button type="submit">Log In</button>
       </form>
       {error && <p>{error}</p>}
+      <p>
+        Don't have an account? <Link to="/register">Register</Link>
+      </p>
     </div>
   );
 };
