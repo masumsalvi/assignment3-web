@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from './firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import './Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -21,7 +22,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Login</h1>
       <form onSubmit={handleLogin}>
         <input
@@ -40,7 +41,7 @@ const Login = () => {
         />
         <button type="submit">Log In</button>
       </form>
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
       <p>
         Don't have an account? <Link to="/register">Register</Link>
       </p>

@@ -3,6 +3,7 @@ import { auth, firestore } from './firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { collection, addDoc } from "firebase/firestore";
 import { Link } from 'react-router-dom';
+import './Register.css';
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -22,14 +23,14 @@ const Register = () => {
             setName('');
             setEmail('');
             setPassword('');
-            setError(null);
+            // setError(null);
         } catch (error) {
             setError('Error signing up with email and password');
         }
     };
 
     return (
-        <div>
+        <div className="container">
             <h1>Register</h1>
             <form onSubmit={handleSignUp}>
                 <input
@@ -55,7 +56,7 @@ const Register = () => {
                 />
                 <button type="submit">Sign Up</button>
             </form>
-            {error && <p>{error}</p>}
+            {error && <p className="error">{error}</p>}
             <p>
         Already have an account? <Link to="/">Login</Link>
       </p>
