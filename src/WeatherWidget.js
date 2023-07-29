@@ -20,7 +20,7 @@ function WeatherWidget() {
 
     return (
         <div>
-            <h2>Weather Data</h2>
+            <h1>Weather Data</h1>
             <p>Temperature: {weatherData.current_weather.temperature}</p>
             <p>Wind Speed: {weatherData.current_weather.windspeed}</p>
             <p>Wind Direction: {weatherData.current_weather.winddirection}</p>

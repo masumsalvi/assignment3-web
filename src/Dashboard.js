@@ -5,6 +5,7 @@ import UserProfile from "./UserProfile";
 import './Dashboard.css';
 import WeatherWidget from './WeatherWidget';
 import WeatherPage from './WeatherPage';
+import BitcoinWidget from './BitcoinWidget';
 
 const Dashboard = () => {
     return (
@@ -18,6 +19,9 @@ const Dashboard = () => {
                 </div>
                 <div className="widget">
                     <WeatherWidget />
+                </div>
+                <div className="widget">
+                    <BitcoinWidget />
                 </div>
             </div>
             <div className="sidebar">

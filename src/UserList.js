@@ -25,6 +25,7 @@ const UserList = () => {
 
     return (
         <div className="user-list">
+            <h1>User List</h1>
             {users.map(userItem => {
                 if (userItem.email !== user.email) {
                     return (
