@@ -6,6 +6,7 @@ import './Dashboard.css';
 import WeatherWidget from './WeatherWidget';
 import WeatherPage from './WeatherPage';
 import BitcoinWidget from './BitcoinWidget';
+import BitcoinDetails from './BitcoinDetails';
 
 const Dashboard = () => {
     return (
@@ -27,6 +28,7 @@ const Dashboard = () => {
             <div className="sidebar">
                 <h2>API Details</h2>
                 <WeatherPage />
+                <BitcoinDetails />
             </div>
         </div>
 
