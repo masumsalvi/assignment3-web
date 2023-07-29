@@ -1,0 +1,38 @@
+.dashboard {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4; /* light grey background for the entire dashboard */
+}
+
+.main-content {
+    flex: 3;
+    padding: 20px;
+    overflow: auto;
+    border-right: 1px solid #ddd; /* separating line between main content and sidebar */
+}
+
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    height: 100%;
+    overflow: auto;
+    background-color: #f9f9f9; /* slightly different background for the sidebar */
+}
+
+.sidebar nav {
+    margin-bottom: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+/* New styles for widgets */
+.widget {
+    background-color: #fff; /* white background for each widget */
+    border: 1px solid #ddd; /* border around each widget */
+    border-radius: 4px; /* rounded corners */
+    padding: 20px; 
+    margin-bottom: 20px; /* space between widgets */
+}

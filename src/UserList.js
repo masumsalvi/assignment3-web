@@ -24,11 +24,11 @@ const UserList = () => {
     }, []);
 
     return (
-        <div>
+        <div className="user-list">
             {users.map(userItem => {
                 if (userItem.email !== user.email) {
                     return (
-                        <div key={userItem.id}>
+                        <div key={userItem.id} className="user-card">
                             <h2>{userItem.displayName}</h2>
                             <p>{userItem.email}</p>
                         </div>
