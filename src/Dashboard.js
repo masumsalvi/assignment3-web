@@ -1,5 +1,6 @@
 import React from 'react';
-// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { FaTools } from 'react-icons/fa';
 import UserList from "./UserList";
 import UserProfile from "./UserProfile";
 import './Dashboard.css';
@@ -13,6 +14,11 @@ import PopulationWidget from './PopulationWidget';
 const Dashboard = () => {
     return (
         <div className="dashboard">
+            <nav className="navbar">
+                <ul>
+                    <li><Link to="/tools"><FaTools /> Tools</Link></li>
+                </ul>
+            </nav>
             <div className="main-content">
                 <div className="widget">
                     <UserProfile />
@@ -37,7 +43,6 @@ const Dashboard = () => {
                 <PopulationDetail />
             </div>
         </div>
-
     );
 }
 
