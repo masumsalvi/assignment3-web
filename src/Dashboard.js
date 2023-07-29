@@ -8,6 +8,7 @@ import WeatherPage from './WeatherPage';
 import BitcoinWidget from './BitcoinWidget';
 import BitcoinDetails from './BitcoinDetails';
 import PopulationDetail from './PopulationDetail';
+import PopulationWidget from './PopulationWidget';
 
 const Dashboard = () => {
     return (
@@ -24,6 +25,9 @@ const Dashboard = () => {
                 </div>
                 <div className="widget">
                     <BitcoinWidget />
+                </div>
+                <div className="widget">
+                    <PopulationWidget />
                 </div>
             </div>
             <div className="sidebar">
