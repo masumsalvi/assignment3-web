@@ -14,32 +14,45 @@ import PopulationWidget from './PopulationWidget';
 const Dashboard = () => {
     return (
         <div className="dashboard">
+            {/* Navigation bar */}
             <nav className="navbar">
                 <ul>
+                    {/* Link to tools page */}
                     <li><Link to="/tools"><FaTools /> Tools</Link></li>
                 </ul>
             </nav>
+            {/* Main content area */}
             <div className="main-content">
+                {/* Widget: User Profile */}
                 <div className="widget">
                     <UserProfile />
                 </div>
+                {/* Widget: User List */}
                 <div className="widget">
                     <UserList />
                 </div>
+                {/* Widget: Weather Widget */}
                 <div className="widget">
                     <WeatherWidget />
                 </div>
+                {/* Widget: Bitcoin Widget */}
                 <div className="widget">
                     <BitcoinWidget />
                 </div>
+                {/* Widget: Population Widget */}
                 <div className="widget">
                     <PopulationWidget />
                 </div>
             </div>
+            {/* Sidebar */}
             <div className="sidebar">
+                {/* Heading for API Details */}
                 <h2>API Details</h2>
+                {/* Weather Details */}
                 <WeatherPage />
+                {/* Bitcoin Details */}
                 <BitcoinDetails />
+                {/* Population Details */}
                 <PopulationDetail />
             </div>
         </div>

@@ -1,16 +1,19 @@
 import { auth } from './firebase';
 
 const UserProfile = () => {
-  const user = auth.currentUser;
+    // Get the currently authenticated user from Firebase Authentication
+    const user = auth.currentUser;
 
-  return (
-    <div className="user-profile">
-      <h1>User Profile</h1>
-      <h3>{user.displayName}</h3>
-      <p>{user.email}</p>
-    </div>
-  );
+    // Render the UserProfile component
+    return (
+        <div className="user-profile">
+            <h1>User Profile</h1>
+            {/* Display the user's display name */}
+            <h3>{user.displayName}</h3>
+            {/* Display the user's email address */}
+            <p>{user.email}</p>
+        </div>
+    );
 }
-
 
 export default UserProfile;

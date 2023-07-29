@@ -14,18 +14,23 @@ const Register = () => {
     const handleSignUp = async (event) => {
         event.preventDefault();
         try {
+            // Create a new user with the provided email and password
             const { user } = await createUserWithEmailAndPassword(auth, email, password);
+            // Add user data (uid, name, email) to the 'user-list' collection in Firestore
             await addDoc(collection(firestore, 'user-list'), {
                 uid: user.uid,
                 name: name,
                 email: user.email,
             });
+            // Update the user's display name with the provided name
             user.setName = name;
+            // Clear the input fields after successful registration
             setName('');
             setEmail('');
             setPassword('');
             // setError(null);
         } catch (error) {
+            // Handle errors if there is an issue during registration
             setError('Error signing up with email and password');
         }
     };
@@ -59,8 +64,8 @@ const Register = () => {
             </form>
             {error && <p className="error">{error}</p>}
             <p>
-        Already have an account? <Link to="/">Login</Link>
-      </p>
+                Already have an account? <Link to="/">Login</Link>
+            </p>
         </div>
     );
 };
