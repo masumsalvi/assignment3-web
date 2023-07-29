@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { auth, firestore } from './firebase';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { collection, addDoc } from "firebase/firestore";
 import { Link } from 'react-router-dom';
 import './Register.css';
@@ -15,7 +15,9 @@ const Register = () => {
         event.preventDefault();
         try {
             // Create a new user with the provided email and password
-            const { user } = await createUserWithEmailAndPassword(auth, email, password);
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+
             // Add user data (uid, name, email) to the 'user-list' collection in Firestore
             await addDoc(collection(firestore, 'user-list'), {
                 uid: user.uid,
@@ -23,7 +25,7 @@ const Register = () => {
                 email: user.email,
             });
             // Update the user's display name with the provided name
-            user.setName = name;
+            await updateProfile(user, { displayName: name });
             // Clear the input fields after successful registration
             setName('');
             setEmail('');
