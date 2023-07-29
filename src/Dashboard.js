@@ -7,6 +7,7 @@ import WeatherWidget from './WeatherWidget';
 import WeatherPage from './WeatherPage';
 import BitcoinWidget from './BitcoinWidget';
 import BitcoinDetails from './BitcoinDetails';
+import PopulationDetail from './PopulationDetail';
 
 const Dashboard = () => {
     return (
@@ -29,6 +30,7 @@ const Dashboard = () => {
                 <h2>API Details</h2>
                 <WeatherPage />
                 <BitcoinDetails />
+                <PopulationDetail />
             </div>
         </div>
 
